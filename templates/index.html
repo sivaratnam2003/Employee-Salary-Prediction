@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee-Salary-Prediction</title>
+    <!-- <link rel="stylesheet" type="text/css" href="..\statics\style.css"> -->
+     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <h1>Employee-Salary-Prediction</h1>
+        </div>
+        <form method="POST" action="/predict">
+
+           <div class="sec1">
+             <div class="form-group">
+                <label for="education">Education</label>
+                <select name="education" required>
+                    <option value="" disabled selected>Select </option>
+                    <option value="Bachelor">Bachelor</option>
+                    <option value="Master">Master</option>
+                    <option value="Associate">Associate</option>
+                    <option value="PhD">PhD</option>
+                </select>
+             </div>
+             <div class="form-group">
+                <label for="industry">Industry</label>
+                <select name="industry" required>
+                    <option value="" disabled selected>Select</option>
+                    <option>Automotive</option>
+                    <option>Media</option>
+                    <option>Education</option>
+                    <option>Consulting</option>
+                    <option>Healthcare</option>
+                    <option>Gaming</option>
+                    <option>Government</option>
+                    <option>Telecommunications</option>
+                    <option>Manufacturing</option>
+                    <option>Energy</option>
+                    <option>Technology</option>
+                    <option>Real Estate</option>
+                    <option>Finance</option>
+                    <option>Transportation</option>
+                    <option>Retail</option>
+                </select>
+             </div>
+             <div class="form-group">
+                <label for="job_title">Job Title</label>
+                <select name="job_title" required>
+                    <option value="" disabled selected>Select</option>
+                    <option>AI Research Scientist</option>
+                    <option>AI Software Engineer</option>
+                    <option>AI Specialist</option>
+                    <option>NLP Engineer</option>
+                    <option>AI Consultant</option>
+                    <option>AI Architect</option>
+                    <option>Principal Data Scientist</option>
+                    <option>Data Analyst</option>
+                    <option>Autonomous Systems Engineer</option>
+                    <option>AI Product Manager</option>
+                    <option>Machine Learning Engineer</option>
+                    <option>Data Engineer</option>
+                    <option>Research Scientist</option>
+                    <option>ML Ops Engineer</option>
+                    <option>Robotics Engineer</option>
+                    <option>Head of AI</option>
+                    <option>Deep Learning Engineer</option>
+                    <option>Data Scientist</option>
+                    <option>Machine Learning Researcher</option>
+                    <option>Computer Vision Engineer</option>
+                </select>
+             </div>
+            </div>
+            <div class="sec1">
+                <div class="form-group">
+                    <label for="experience_level">Experience Level</label>
+                    <select name="experience_level" required>
+                        <option value="" disabled selected>Select Level</option>
+                        <option value="SE">Senior</option>
+                        <option value="EN">Entry Level</option>
+                        <option value="MI">Mid Level</option>
+                        <option value="EX">Executive</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="years_of_experience">Years of Experience</label>
+                    <input 
+                    type="number" 
+                    name="years_of_experience" 
+                    min="0" 
+                    max="50" 
+                    placeholder="Select" 
+                    required
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="company_location">Company Location</label>
+                    <select name="company_location" required>
+                        <option value="" disabled selected>Select</option>
+                        <option>China</option>
+                        <option>Canada</option>
+                        <option>Switzerland</option>
+                        <option>India</option>
+                        <option>France</option>
+                        <option>Germany</option>
+                        <option>United Kingdom</option>
+                        <option>Singapore</option>
+                        <option>Austria</option>
+                        <option>Sweden</option>
+                        <option>South Korea</option>
+                        <option>Norway</option>
+                        <option>Netherlands</option>
+                        <option>United States</option>
+                        <option>Australia</option>
+                        <option>Ireland</option>
+                        <option>Denmark</option>
+                        <option>Finland</option>
+                        <option>Japan</option>
+                    </select>
+                </div>
+            </div>
+        
+            
+            <button type="submit">Predict</button>
+        </form>
+<center>
+        {% if prediction_text %}
+            <div class="result">{{ prediction_text }}</div>
+        {% endif %}
+</center>
+    </div>
+    <div class="dev">
+        <P>Design & developed by</P>
+        <h4>Siva Ratnam Kanda</h4>
+        <div class="link">
+            <a href="https://www.linkedin.com/in/siva-ratnam-kanda-a550152ba?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">Linkedin</a>
+            <a href="https://github.com/sivaratnam2003/Internship_ML">Github</a>
+        </div>
+        </div>
+</body>
+</html>
